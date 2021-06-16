@@ -90,24 +90,6 @@ export function useConvertInputs(otherSymbol, toBonded = true) {
     const receivedWithSlippage = estReceived.mul(100 - maxSlippagePct).div(100)
 
     const singleUnit = (amountSource.isZero()  ? 0 : estReceived/amountSource)
-
-    /*console.log(estReceived)
-    console.log(amountSource)
-    console.log("Is Zero? "+ amountSource.isZero())
-    if (!amountSource.isZero()){
-      console.log("Division with BigNum: " + estReceived.div(amountSource))
-      console.log("Normal division: " + estReceived/amountSource)
-    }
-    
-    console.log("singleUnit: " + singleUnit)
-    console.log("Parsed Single Unit: " + parseUnits(singleUnit.toString())) //This returns an error while converting
-    */
-    setPricePerUnitReceived(
-      //formatUnits(parseUnits(singleUnit.toString()), { digits: bondedDecimals, truncateToDecimalPlace: 16, replaceZeroBy: 0})
-      singleUnit
-      )
-
-    //console.log("pricePerUnitReceived: " + pricePerUnitReceived)
     
     setAmountRecipient(
       amount
@@ -120,6 +102,9 @@ export function useConvertInputs(otherSymbol, toBonded = true) {
     )
     setInputAmountRetained(
       formatUnits(amountRetained, { digits: bondedDecimals, truncateToDecimalPlace: 8 , replaceZeroBy: 0})
+    )
+    setPricePerUnitReceived(
+      singleUnit
     )
     setAmountMinWithSlippage(
       receivedWithSlippage
