@@ -31,6 +31,7 @@ function ConvertForm() {
   const [messageChecked, setMeessageChecked] = useState(false)
   const {
     amountSource,
+    amountRecipient,
     amountMinWithSlippage,
     bindOtherInput,
     bondingPriceLoading,
@@ -41,7 +42,9 @@ function ConvertForm() {
     inputMinWithSlippage,
     resetInputs,
     entryTribute,
-    exitTribute,    
+    exitTribute, 
+    pricePerUnitReceived, 
+    inputAmountRetained, 
   } = useConvertInputs(options[selectedOption], toBonded)
   const [tokenBalance, spendableBalance] = useTokenBalance(options[selectedOption])
 
@@ -154,18 +157,10 @@ function ConvertForm() {
               disabled={true}
             />
             <LabelWithOverlay
-              label={`${selectedOption === 0 ? `Entry tribute is: ${entryTribute}%` : `Exit tribute is: ${exitTribute}%`}`}
-              description={`Amount before tribute: ${selectedOption === 0 ? inputValueRecipient + " "+ options[1] : inputValueRecipient + " " + options[0]}`}
-              overlayPlacement="top"
-            />
-            <LabelWithOverlay
-              label={`Estimated minimum received (with slippage): ${selectedOption === 0 ? inputMinWithSlippage + " "+ options[1] : inputMinWithSlippage + " " + options[0]}`}
-              description={`This tool uses a bonding curve to convert ${collateral.symbol} into ${bonded.symbol} and
-                      back at a pre-defined rate. The price is calculated by an
-                      automated market maker smart contract that defines a
-                      relationship between token price and token supply. ${selectedOption === 0 ? `You can
-                      also convert wxDAI into DAI using the xDAI bridge.` : `You can also convert ${bonded.symbol}
-                      into other tokens on Honeyswap.`}
+              label={`${selectedOption === 0 ?  `1 wxDAI = ${pricePerUnitReceived} testTEC` : `1 testTEC = ${pricePerUnitReceived} wxDAI`}  `}
+              description={`
+              ${selectedOption === 0 ? `Entry tribute (${entryTribute}%) = ${inputAmountRetained} wxDAI` : `Exit tribute (${exitTribute}%) = ${inputAmountRetained} wxDAI`}  
+              \n Minimum received (with slippage): ${selectedOption === 0 ? inputMinWithSlippage + " "+ options[1] : inputMinWithSlippage + " " + options[0]}
               `}
 
               overlayPlacement="top"
