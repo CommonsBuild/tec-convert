@@ -157,7 +157,7 @@ function ConvertForm() {
               disabled={true}
             />
             <LabelWithOverlay
-              label={`${selectedOption === 0 ?  `1 wxDAI = ${pricePerUnitReceived} ${bonded.symbol}` : `1 testTEC = ${pricePerUnitReceived} ${collateral.symbol}`}  `}
+              label={`${selectedOption === 0 ?  `1 ${collateral.symbol} = ${pricePerUnitReceived} ${bonded.symbol}` : `1 ${bonded.symbol} = ${pricePerUnitReceived} ${collateral.symbol}`}  `}
               description={`
               ${selectedOption === 0 ? `Entry tribute (${entryTribute}%) = ${inputAmountRetained} ${collateral.symbol}` : `Exit tribute (${exitTribute}%) = ${inputAmountRetained} ${bonded.symbol}`}  
               \n Minimum received (with slippage): ${selectedOption === 0 ? inputMinWithSlippage + " " + bonded.symbol : inputMinWithSlippage + " " + collateral.symbol}
