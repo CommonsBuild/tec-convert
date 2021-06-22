@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { bigNum } from 'lib/utils'
-import { useBondingCurvePrice, useTokenDecimals, getTributePcts } from 'lib/web3-contracts'
+import { useBondingCurvePrice, useTokenDecimals, useTributePcts } from 'lib/web3-contracts'
 import { formatUnits, parseUnits } from 'lib/web3-utils'
 
 import { bonded } from '../../config'
@@ -44,7 +44,7 @@ export function useConvertInputs(otherSymbol, toBonded = true) {
   } = useBondingCurvePrice(amountSource, toBonded)
   const bondedDecimals = useTokenDecimals(bonded.symbol)
   const otherDecimals = useTokenDecimals(otherSymbol)
-  const [entryTribute, exitTribute] = getTributePcts() 
+  const [entryTribute, exitTribute] = useTributePcts() 
 
   // convertFromBonded is used as a toggle to execute a conversion to or from Bonded.
   const [convertFromBonded, setConvertFromBonded] = useState(false)
@@ -86,10 +86,10 @@ export function useConvertInputs(otherSymbol, toBonded = true) {
     const maxSlippagePct = 1 //slippage hardcoded at 1% for now, can be made changeable in the future
 
     const estReceived = amount.mul(100 - applicableTribute).div(100)
-    const amountRetained = amount.mul(applicableTribute).div(100) 
+    const amountRetained = amountSource.mul(applicableTribute).div(100) 
     const receivedWithSlippage = estReceived.mul(100 - maxSlippagePct).div(100)
 
-    const singleUnit = (amountSource.isZero()  ? 0 : estReceived/amountSource)
+    const singleUnit = (amount.isZero()  ? 0 : estReceived/amountSource)
     
     setAmountRecipient(
       amount
@@ -110,7 +110,7 @@ export function useConvertInputs(otherSymbol, toBonded = true) {
       receivedWithSlippage
     )
     setInputMinWithSlippage(
-      formatUnits(receivedWithSlippage, { digits: bondedDecimals, truncateToDecimalPlace: 8 })
+      formatUnits(receivedWithSlippage, { digits: bondedDecimals, truncateToDecimalPlace: 8, replaceZeroBy: 0 })
     )
 
   }, [
