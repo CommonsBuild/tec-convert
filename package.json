@@ -20,7 +20,8 @@
     "start:mainnet": "REACT_APP_CHAIN_ID=1 yarn start",
     "start:rinkeby": "REACT_APP_CHAIN_ID=4 yarn start",
     "start:xdai": "REACT_APP_CHAIN_ID=100 yarn start",
-    "test": "jest"
+    "test": "jest",
+    "populate-config": "node scripts/populate-config.js"
   },
   "dependencies": {
     "@sentry/browser": "^5.11.1",
