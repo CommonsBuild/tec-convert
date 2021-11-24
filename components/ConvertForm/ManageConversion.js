@@ -53,7 +53,7 @@ function ManageConversion({ toBonded, fromAmount, handleReturnHome, minReturn })
             },
           ])
 
-          // Then there's the case when a user has an allowance set to the market maker contract
+          // Then there's the case when a user has an allowance set to the bonding curve contract
           // but wants to convert even more tokens this time. When dealing with this case
           // we want to first prepend a transaction to reset the allowance back to zero
           // (before raising it in the next transaction from above).
