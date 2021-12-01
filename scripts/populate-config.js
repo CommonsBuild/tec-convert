@@ -1,3 +1,5 @@
+// node scripts/populate-config.js <bonding-curve-addr> <collateral-token-addr> <chain-id>
+
 const bondingCurveAddr = process.argv.slice(2)[0]
 const collateralTokenAddr = process.argv.slice(2)[1]
 const chainId = parseInt(process.argv.slice(2)[2])
