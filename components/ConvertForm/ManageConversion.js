@@ -98,6 +98,7 @@ function ManageConversion({ toBonded, fromAmount, handleReturnHome, minReturn })
     makeOrder,
     toBonded,
     updateConvertedValue,
+    minReturn,
   ])
 
   return (

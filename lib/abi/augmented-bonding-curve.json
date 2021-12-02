@@ -127,6 +127,11 @@
       },
       {
         "indexed": true,
+        "name": "onBehalfOf",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "name": "collateral",
         "type": "address"
       },
@@ -160,6 +165,11 @@
       {
         "indexed": true,
         "name": "seller",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "onBehalfOf",
         "type": "address"
       },
       {
