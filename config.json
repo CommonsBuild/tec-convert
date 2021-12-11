@@ -4,7 +4,7 @@
     "decimals": 18
   },
   "bonded": {
-    "symbol": "TestTEC3",
+    "symbol": "TestTEC",
     "decimals": 18
   },
   "knownContracts": {
@@ -18,11 +18,11 @@
     },
     "100": {
       "BANCOR_FORMULA": "0xA4e28453b4F3fcB251EEbe1aC2798eEE55e2bE6a",
-      "BONDING_CURVE_RESERVE": "0x9A2D729Cc06fB0ceEE0fE00dDC95eBAE206C241c",
-      "BONDING_CURVE": "0xbd91ba23e03fbe052f62d6327d3179daf8ee527e",
+      "BONDING_CURVE_RESERVE": "0x0CF80a44ad04ee82004c7159a7fA3c566D8d93D3",
+      "BONDING_CURVE": "0x774dcf9f0ba1345c914bdc966cfe45fda0795706",
       "COLLATERAL_TOKEN": "0x70be33ccef2d04d52ab5f1dabb15291f47b92da8",
-      "BONDED_TOKEN": "0xe7cA80736667735A8F78cAD5e29C02f0605D1248",
-      "TOKEN_MANAGER": "0xC7375FbDf043A631937613EbeC05AbDd775A5dA1"
+      "BONDED_TOKEN": "0xa96f9f010f60367C470A9AB73155886cCFab90e1",
+      "TOKEN_MANAGER": "0xccA268091D1Bf7EE2FE9E143648F0C129dDF365A"
     }
   },
   "docs": {
