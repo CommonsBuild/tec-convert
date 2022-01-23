@@ -1,10 +1,10 @@
 {
   "collateral": {
-    "symbol": "tDAI",
+    "symbol": "WXDAI",
     "decimals": 18
   },
   "bonded": {
-    "symbol": "TESTTEC",
+    "symbol": "TEC",
     "decimals": 18
   },
   "knownContracts": {
@@ -18,19 +18,21 @@
     },
     "100": {
       "BANCOR_FORMULA": "0xA4e28453b4F3fcB251EEbe1aC2798eEE55e2bE6a",
-      "BONDING_CURVE_RESERVE": "0x89ceF2fed5480C8e289781663BDA4189A191DB44",
-      "BONDING_CURVE": "0x223c77e76d3ce81896641532658140a8bbff8ca9",
-      "COLLATERAL_TOKEN": "0x70be33ccef2d04d52ab5f1dabb15291f47b92da8",
-      "BONDED_TOKEN": "0x2D31e6Ca05fFe9D47e501cDBa6b4DbBd8beD79a9",
-      "TOKEN_MANAGER": "0x89bDb25ECE55C14e0FA8f48E15cA6DAFa1b998a5"
+      "BONDING_CURVE_RESERVE": "0x4a3C145c35Fa0daa58Cb5BD93CE905B086087246",
+      "BONDING_CURVE": "0x74ade20c12067e2f9457c037809a73f35694f99f",
+      "COLLATERAL_TOKEN": "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+      "BONDED_TOKEN": "0x5dF8339c5E282ee48c0c7cE8A7d01a73D38B3B27",
+      "TOKEN_MANAGER": "0x080C696B7bD6d830BF5092Fe7DFcb72B42BdD8b7"
     }
   },
   "docs": {
     "About": "https://medium.com/@tecommons",
     "Forum": "https://forum.tecommons.org",
-    "Gov": "https://gardens-staging.1hive.org/#/garden/0x195df87585b965c9090e967be205e9d090cdb707"
+    "Gov": "https://gardens.1hive.org/#/garden/0x1fc7e8d8e4bbbef77a4d035aec189373b52125a8"
   },
   "checkbox": {
-    "text": "This is a DEMO. I understand TestTEC tokens are going to be worthless when the official TECommons DAO launches."
+    "text": "By clicking on “Convert” you are accepting our ",
+    "href": "https://gateway.pinata.cloud/ipfs/QmSYHg3Vthf8JGxHbDauWohy7aRKn3X2esHTWofVv4ei1A",
+    "hrefText": "legal terms"
   }
 }
