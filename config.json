@@ -31,8 +31,8 @@
     "Gov": "https://gardens.1hive.org/#/garden/0x1fc7e8d8e4bbbef77a4d035aec189373b52125a8"
   },
   "checkbox": {
-    "text": "By clicking on “Convert” you are accepting our ",
+    "text": "By clicking on “Convert” you are accepting ",
     "href": "https://gateway.pinata.cloud/ipfs/QmSYHg3Vthf8JGxHbDauWohy7aRKn3X2esHTWofVv4ei1A",
-    "hrefText": "legal terms"
+    "hrefText": "these terms"
   }
 }
