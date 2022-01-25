@@ -64,8 +64,8 @@ export default class Document extends NextDocument {
             property="og:image:secure_url"
             content={env('SITE_URL')+"twitter-card-icon.png"}
           />
-          <meta property="og:image:width" content="300" />
-          <meta property="og:image:height" content="300" />
+          <meta property="og:image:width" content="400" />
+          <meta property="og:image:height" content="400" />
 
           <meta name="description" content={env('SITE_DESCRIPTION')} />
           <style>{`
