@@ -53,7 +53,7 @@ export default class Document extends NextDocument {
           <meta name="twitter:site" content="@AragonProject" />
           <meta name="twitter:description" content={env('SITE_DESCRIPTION')} />
           <meta name="twitter:title" content={env('SITE_TITLE')} />
-          <meta name="twitter:image" content="/twitter-card-icon.png" />
+          <meta name="twitter:image" content={env('SITE_URL')+"/twitter-card-icon.png"} />
 
           <meta property="og:title" content={env('SITE_TITLE')} />
           <meta property="og:description" content={env('SITE_DESCRIPTION')} />
