@@ -59,10 +59,10 @@ export default class Document extends NextDocument {
           <meta property="og:description" content={env('SITE_DESCRIPTION')} />
           <meta property="og:url" content={env('SITE_URL')} />
           <meta property="og:site_name" content={env('SITE_TITLE')} />
-          <meta property="og:image" content="/twitter-card-icon.png" />
+          <meta property="og:image" content={env('SITE_URL')+"/twitter-card-icon.png"} />
           <meta
             property="og:image:secure_url"
-            content="/twitter-card-icon.png"
+            content={env('SITE_URL')+"/twitter-card-icon.png"}
           />
           <meta property="og:image:width" content="300" />
           <meta property="og:image:height" content="300" />
