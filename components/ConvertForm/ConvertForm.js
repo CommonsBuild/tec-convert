@@ -14,7 +14,7 @@ import { useConvertInputs } from './useConvertInputs'
 
 import question from './assets/question.svg'
 
-import { collateral, bonded, docs, checkbox } from '../../config'
+import { collateral, bonded, docs, getTEC, checkbox } from '../../config'
 
 const options = [collateral.symbol, bonded.symbol]
 
@@ -255,36 +255,65 @@ function LabelWithOverlay({ label, description, overlayPlacement }) {
 }
 
 function Docs() {
+  const getTECText = <HowToGetButton>{ getTEC.text }</HowToGetButton>
   const docLinks = Object.entries(docs).map(([text, link]) => (
     <li key={link}>
       <Anchor href={link}>{text}</Anchor>
     </li>
   ))
   return (
-    <ul
-      css={`
-        position: absolute;
-        bottom: 0px;
-        right: 8px;
-        list-style: none;
-        color: #a0a8c2;
-        font-size: 16px;
-        padding: 0;
-        li {
-          display: inline;
-          margin: 0 32px;
-          a {
-            color: #a0a8c2;
+    <div>
+      <ul
+        css={`
+          position: absolute;
+          bottom: 0px;
+          left: 100px;
+          list-style: none;
+          color: #a0a8c2;
+          font-size: 16px;
+          padding: 0;
+          margin-top: -20px;
+          li {
+            display: inline;
+            margin: 0 32px;
+            a {
+              color: #a0a8c2;
+            }
           }
-        }
-        @media screen and (max-width: 1024px) {
-          position: relative;
-          bottom: -32px;
-        }
-      `}
-    >
-      {docLinks}
-    </ul>
+          @media screen and (max-width: 1024px) {
+            position: relative;
+            bottom: -32px;
+            left: 0px;
+          }
+        `}
+      >
+        {getTECText}
+      </ul>
+      <ul
+        css={`
+          position: absolute;
+          bottom: 0px;
+          right: 8px;
+          list-style: none;
+          color: #a0a8c2;
+          font-size: 16px;
+          padding: 0;
+          li {
+            display: inline;
+            margin: 0 32px;
+            a {
+              color: #a0a8c2;
+            }
+          }
+          @media screen and (max-width: 1024px) {
+            position: relative;
+            bottom: -32px;
+          }
+        `}
+      >
+        {docLinks}
+      </ul>
+    </div>
   )
 }
 
@@ -304,6 +333,25 @@ const Button = styled.button`
   &[disabled] {
     opacity: 0.5;
     cursor: inherit;
+  }
+`
+
+const HowToGetButton = styled.button`
+  background: #03B3FF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border: solid 0px transparent;
+  border-radius: 6px;
+  color: black;
+  width: 100%;
+  max-width: 470px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 0px 0px 0px 5px;
+  opacity: 0.5;
+  @media screen and (max-width: 1024px) {
+    height: 40px;
   }
 `
 

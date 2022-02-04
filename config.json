@@ -34,5 +34,9 @@
     "text": "By clicking on “Convert” you are accepting ",
     "href": "https://gateway.pinata.cloud/ipfs/QmSYHg3Vthf8JGxHbDauWohy7aRKn3X2esHTWofVv4ei1A",
     "hrefText": "these terms"
+  },
+  "getTEC": {
+    "text": "How to get $TEC",
+    "href": "https://token-engineering-commons.gitbook.io/tec-handbook/how-to-purchase-usdtec"
   }
 }
