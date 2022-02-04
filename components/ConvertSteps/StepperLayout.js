@@ -8,6 +8,7 @@ import {
   STEPPER_ERROR,
 } from './stepper-statuses'
 import repeat from './assets/repeat.svg'
+import { addAsset } from 'lib/metamask'
 
 function StepperLayout({
   children,
@@ -115,9 +116,11 @@ function StepperLayout({
             <div
               css={`
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                gap: 8px;
               `}
             >
+              <Button onClick={addAsset}>Add TEC to MetaMask</Button>
               <Button onClick={onReturnHome}>Start new conversion</Button>
             </div>
           )}

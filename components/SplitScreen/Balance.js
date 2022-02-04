@@ -6,10 +6,10 @@ import { bigNum } from '../../lib/utils'
 function Balance({ tokenAmountToConvert, tokenBalance, spendableBalance }) {
   const balanceError = useMemo(
     () =>
-      tokenAmountToConvert.gt(tokenBalance) &&
+      tokenAmountToConvert.gt(spendableBalance) &&
       !tokenAmountToConvert.eq(-1) &&
       !tokenBalance.eq(-1),
-    [tokenAmountToConvert, tokenBalance]
+    [tokenAmountToConvert, tokenBalance, spendableBalance]
   )
 
   return !tokenBalance.eq(-1) ? (

@@ -5,7 +5,9 @@
   },
   "bonded": {
     "symbol": "TEC",
-    "decimals": 18
+    "decimals": 18,
+    "address": "0x5dF8339c5E282ee48c0c7cE8A7d01a73D38B3B27",
+    "image": "https://raw.githubusercontent.com/CommonsSwarm/tec-convert/a819fd85c83ad4e71c286509ceb9fb056655f87b/assets/token.svg"
   },
   "knownContracts": {
     "4": {

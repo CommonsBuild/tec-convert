@@ -50,9 +50,9 @@ function ConvertForm() {
   const { account } = useWalletAugmented()
 
   const inputDisabled = useMemo(() => !Boolean(account), [account])
-  const inputError = useMemo(() => Boolean(tokenBalance.lt(amountSource)), [
+  const inputError = useMemo(() => Boolean(spendableBalance.lt(amountSource)), [
     amountSource,
-    tokenBalance,
+    spendableBalance,
   ])
 
   const handleCheckboxToggle = useCallback(() => {
@@ -66,10 +66,10 @@ function ConvertForm() {
 
   const handleConvertMax = useCallback(() => {
     handleManualInputChange(
-      formatUnits(tokenBalance, { truncateToDecimalPlace: 3 }),
+      formatUnits(spendableBalance, { truncateToDecimalPlace: 3 }),
       toBonded
     )
-  }, [handleManualInputChange, toBonded, tokenBalance])
+  }, [handleManualInputChange, toBonded, spendableBalance])
 
   const handleConvert = useCallback(() => {
     setFormStatus(CONVERTER_STATUSES.STEPPER)
