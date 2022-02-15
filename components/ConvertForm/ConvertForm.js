@@ -255,7 +255,11 @@ function LabelWithOverlay({ label, description, overlayPlacement }) {
 }
 
 function Docs() {
-  const getTECText = <HowToGetButton>{ getTEC.text }</HowToGetButton>
+  const getTECText = (
+    <HowToGetButton href={getTEC.href} as="a">
+      {getTEC.text}
+    </HowToGetButton>
+  )
   const docLinks = Object.entries(docs).map(([text, link]) => (
     <li key={link}>
       <Anchor href={link}>{text}</Anchor>
@@ -273,6 +277,7 @@ function Docs() {
           font-size: 16px;
           padding: 0;
           margin-top: -20px;
+          text-align: center;
           li {
             display: inline;
             margin: 0 32px;
